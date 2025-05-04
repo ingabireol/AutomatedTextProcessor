@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.dataflow.textprocessing.controller.MainController">
+    <padding>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+    </padding>
+    <spacing>10.0</spacing>
+    
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Open" onAction="#handleOpenFile"/>
+            <MenuItem text="Save" onAction="#handleSaveFile"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Batch Process" onAction="#handleBatchProcess"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Exit" onAction="#handleExit"/>
+        </Menu>
+        <Menu text="Edit">
+            <MenuItem text="Find" onAction="#handleFind"/>
+            <MenuItem text="Replace" onAction="#handleReplace"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Convert Case" onAction="#handleCaseConversion"/>
+        </Menu>
+        <Menu text="Tools">
+            <MenuItem text="Word Frequency Analysis" onAction="#handleWordFrequency"/>
+            <MenuItem text="Pattern Extraction" onAction="#handlePatternExtraction"/>
+            <MenuItem text="Text Statistics" onAction="#handleTextStatistics"/>
+            <MenuItem text="Generate Summary" onAction="#handleGenerateSummary"/>
+            <SeparatorMenuItem/>
+            <MenuItem text="Regex Operations">
+                <items>
+                    <MenuItem text="Validate Pattern" onAction="#handleValidatePattern"/>
+                    <MenuItem text="Extract Matches" onAction="#handleExtractMatches"/>
+                    <MenuItem text="Replace All Matches" onAction="#handleReplaceAllMatches"/>
+                </items>
+            </MenuItem>
+            <SeparatorMenuItem/>
+            <MenuItem text="Advanced Processing">
+                <items>
+                    <MenuItem text="Remove Duplicates" onAction="#handleRemoveDuplicates"/>
+                    <MenuItem text="Sort Lines" onAction="#handleSortLines"/>
+                    <MenuItem text="Format JSON" onAction="#handleFormatJSON"/>
+                    <MenuItem text="Format XML" onAction="#handleFormatXML"/>
+                </items>
+            </MenuItem>
+        </Menu>
+    </MenuBar>
+
+    <HBox>
+        <spacing>10.0</spacing>
+        <VBox HBox.hgrow="ALWAYS">
+            <spacing>5.0</spacing>
+            <Label text="Input Text:"/>
+            <TextArea fx:id="inputTextArea" VBox.vgrow="ALWAYS"/>
+        </VBox>
+        
+        <VBox HBox.hgrow="ALWAYS">
+            <spacing>5.0</spacing>
+            <Label text="Output:"/>
+            <TextArea fx:id="outputTextArea" VBox.vgrow="ALWAYS" editable="false"/>
+        </VBox>
+    </HBox>
+
+    <HBox alignment="CENTER_RIGHT">
+        <spacing>10.0</spacing>
+        <Button text="Word Frequency" onAction="#handleWordFrequency"/>
+        <Button text="Pattern Extract" onAction="#handlePatternExtraction"/>
+        <Button text="Statistics" onAction="#handleTextStatistics"/>
+        <Button text="Summary" onAction="#handleGenerateSummary"/>
+        <Button text="Clear" onAction="#handleClear"/>
+    </HBox>
+
+    <HBox styleClass="status-bar" alignment="CENTER_LEFT" style="-fx-background-color: #f0f0f0;">
+        <padding>
+            <Insets top="5.0" right="5.0" bottom="5.0" left="5.0"/>
+        </padding>
+        <Label fx:id="statusLabel" text="Ready"/>
+    </HBox>
+</VBox> 
