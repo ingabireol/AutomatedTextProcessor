@@ -1,0 +1,17 @@
+This is a sample text file for testing the Text Processing Application.
+
+The application provides various text processing features:
+1. Word frequency analysis
+2. Pattern extraction
+3. Text statistics
+4. Case conversion
+5. Text summarization
+
+Regular expressions can be used to find patterns like:
+- Email addresses: user@example.com
+- Phone numbers: (123) 456-7890
+- Dates: 2024-03-20
+
+The text contains multiple paragraphs and sentences to test various features.
+Some words are repeated multiple times to test word frequency analysis.
+This is the last sentence of the sample text. 

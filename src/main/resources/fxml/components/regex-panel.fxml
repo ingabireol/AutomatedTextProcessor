@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.dataflow.textprocessing.controller.RegexPanelController"
+      styleClass="regex-panel"
+      spacing="10.0">
+    <padding>
+        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+    </padding>
+
+    <Label text="Regular Expression Operations" styleClass="section-title"/>
+    
+    <GridPane hgap="10" vgap="5">
+        <Label text="Pattern:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="patternField" GridPane.columnIndex="1" GridPane.rowIndex="0" HBox.hgrow="ALWAYS"/>
+        
+        <Label text="Replacement:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="replacementField" GridPane.columnIndex="1" GridPane.rowIndex="1" HBox.hgrow="ALWAYS"/>
+    </GridPane>
+
+    <HBox spacing="10.0" alignment="CENTER_RIGHT">
+        <Button text="Validate" onAction="#handleValidate" styleClass="action-button"/>
+        <Button text="Find" onAction="#handleFind" styleClass="action-button"/>
+        <Button text="Replace" onAction="#handleReplace" styleClass="action-button"/>
+        <Button text="Extract" onAction="#handleExtract" styleClass="action-button"/>
+    </HBox>
+
+    <TitledPane text="Common Patterns" expanded="false">
+        <VBox spacing="5.0">
+            <Button text="Email Address" onAction="#handleEmailPattern" styleClass="pattern-button"/>
+            <Button text="Phone Number" onAction="#handlePhonePattern" styleClass="pattern-button"/>
+            <Button text="URL" onAction="#handleUrlPattern" styleClass="pattern-button"/>
+            <Button text="Date" onAction="#handleDatePattern" styleClass="pattern-button"/>
+        </VBox>
+    </TitledPane>
+
+    <TextArea fx:id="resultArea" VBox.vgrow="ALWAYS" editable="false"/>
+</VBox> 
